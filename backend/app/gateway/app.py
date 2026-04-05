@@ -12,6 +12,7 @@ from app.gateway.routers import (
     mcp,
     memory,
     models,
+    research,
     skills,
     suggestions,
     threads,
@@ -145,6 +146,10 @@ This gateway provides custom endpoints for models, MCP configuration, skills, an
                 "description": "Manage IM channel integrations (Feishu, Slack, Telegram)",
             },
             {
+                "name": "research",
+                "description": "Research team collaboration - create and manage research projects",
+            },
+            {
                 "name": "health",
                 "description": "Health check and system status endpoints",
             },
@@ -156,6 +161,9 @@ This gateway provides custom endpoints for models, MCP configuration, skills, an
     # Include routers
     # Models API is mounted at /api/models
     app.include_router(models.router)
+
+    # Research API is mounted at /api/research
+    app.include_router(research.router)
 
     # MCP API is mounted at /api/mcp
     app.include_router(mcp.router)
